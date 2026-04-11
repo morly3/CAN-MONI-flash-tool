@@ -1,0 +1,16 @@
+{
+  "name": "CANMoni",
+  "version": "0.9.0b153",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        {
+          "path": "firmware_merged.bin",
+          "offset": 0
+        }
+      ]
+    }
+  ]
+}
