@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CANMoni Firmware Flasher</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #1e1e2e;
+      color: #cdd6f4;
+    }
+    .page {
+      width: min(780px, 92vw);
+      padding: 24px 0 40px;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+    p  { color: #a6adc8; margin-bottom: 1.1rem; }
+    .meta {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .card {
+      border: 1px solid #334155;
+      border-radius: 10px;
+      background: #111827;
+      padding: 14px 16px;
+      margin-top: 1rem;
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.05rem;
+      color: #e2e8f0;
+    }
+    .history {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .history li + li {
+      margin-top: 0.4rem;
+    }
+    .history-links {
+      margin-left: 0.45rem;
+      white-space: nowrap;
+    }
+    .history-links a {
+      color: #93c5fd;
+      text-decoration: underline;
+      margin-left: 0.35rem;
+      font-size: 0.9rem;
+    }
+    .date {
+      color: #94a3b8;
+      margin-right: 0.35rem;
+    }
+    .ver {
+      color: #7dd3fc;
+      margin-right: 0.45rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    esp-web-install-button::part(button) {
+      background: #89b4fa;
+      color: #1e1e2e;
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .connect-btn {
+      background: #89b4fa;
+      color: #1e1e2e;
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="index.html" style="display:inline-block;margin-bottom:0.8rem;color:#89b4fa;font-size:0.9rem;text-decoration:none;">← ガイドに戻る</a>
+    <h1>CANMoni Firmware Flasher</h1>
+<section class="card" aria-labelledby="flash-title">
+      <h2 id="flash-title">ファームウェア書き込み</h2>
+      <p style="color:#a6adc8;margin:0 0 0.8rem;">Chrome / Edge でこのページを開いてください。USB 接続後にボタンを押すだけで書き込み完了。</p>
+      <div class="meta" id="version-text">現在の配布版: 読み込み中...</div>
+      <esp-web-install-button manifest="manifest.json">
+        <button slot="activate" class="connect-btn">Connect to M5Stack Core S3</button>
+      </esp-web-install-button>
+    </section>
+
+    <section class="card" aria-labelledby="sd-download-title">
+      <h2 id="sd-download-title">SD カード OTA 用ファームウェア</h2>
+      <p style="color:#a6adc8;margin:0 0 0.8rem;">
+        SD カードに <code style="background:#1e1e2e;padding:2px 5px;border-radius:4px;">firmware_ota.bin</code>
+        としてコピーし、CANMoni の設定メニューから「Firmware Update」を実行してください。
+      </p>
+      <a href="firmware_ota.bin" download="firmware_ota.bin"
+         style="display:inline-block;background:#a6e3a1;color:#1e1e2e;padding:0.5rem 1.2rem;
+                border-radius:6px;text-decoration:none;font-size:0.95rem;">
+        ダウンロード (firmware_ota.bin)
+      </a>
+    </section>
+
+    <section class="card" aria-labelledby="release-notes-title">
+      <h2 id="release-notes-title">更新履歴</h2>
+      <ul class="history" id="history-list">
+        <li>履歴を読み込み中...</li>
+      </ul>
+    </section>
+  </main>
+
+  <script>
+    async function loadManifest() {
+      try {
+        const res = await fetch("manifest.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("manifest fetch failed");
+        const manifest = await res.json();
+        const ver = manifest && manifest.version ? manifest.version : "不明";
+        document.getElementById("version-text").textContent = `現在の配布版: ${ver}`;
+      } catch (_) {
+        document.getElementById("version-text").textContent = "現在の配布版: 取得失敗";
+      }
+    }
+
+    async function loadChangelog() {
+      const listEl = document.getElementById("history-list");
+      try {
+        const res = await fetch("changelog.json", { cache: "no-store" });
+        if (!res.ok) throw new Error("changelog fetch failed");
+        const entries = await res.json();
+        if (!Array.isArray(entries) || entries.length === 0) {
+          listEl.innerHTML = "<li>履歴はまだありません。</li>";
+          return;
+        }
+        listEl.innerHTML = entries.map((e) => {
+          const d = e.date ? `<span class=\"date\">${e.date}</span>` : "";
+          const v = e.version ? `<span class=\"ver\">v${e.version}</span>` : "";
+          const t = e.text || "更新内容";
+          return `<li>${d}${v}${t}</li>`;
+        }).join("");
+      } catch (_) {
+        listEl.innerHTML = "<li>履歴の読み込みに失敗しました。</li>";
+      }
+    }
+
+    loadManifest();
+    loadChangelog();
+  </script>
+</body>
+</html>
