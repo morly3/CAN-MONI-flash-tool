@@ -1,0 +1,304 @@
+[
+  {
+    "date": "2026-05-06",
+    "version": "0.9.5.51",
+    "text": "ブレーキ(M/C)圧-減速Gグラフ追加",
+    "from": "589f59d35d4d25600bcc8f37cd0140dfaed64b33",
+    "to": "ee71e809737ef7ddc79839037fd73a6d89795c11"
+  },
+  {
+    "date": "2026-04-30",
+    "version": "0.9.4.0",
+    "text": "アクセル-スロットルグラフを追加"
+  },
+  {
+    "date": "2026-04-24",
+    "version": "0.9.3.17",
+    "text": "Keep OIL_GRAPH history updating while hidden"
+  },
+  {
+    "date": "2026-04-24",
+    "version": "0.9.3.16",
+    "text": "Fix changelog generation with full checkout history"
+  },
+  {
+    "date": "2026-04-24",
+    "version": "0.9.3.16",
+    "text": "Refine button controls and OTA history archive policy"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.3.3",
+    "text": "Change version format to X.X.X.N dotted style"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.3b1",
+    "text": "Use OTA-only public links in changelog entries"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.3b1",
+    "text": "Auto-generate changelog with per-version firmware links"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.3b1",
+    "text": "Update public changelog generation with date and version"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.3b1",
+    "text": "Rework input setting menu and bump to 0.9.3"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.2b32",
+    "text": "Keep full git log history in changelog (no limit)"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.2b32",
+    "text": "Auto-generate changelog.json from git log on deploy"
+  },
+  {
+    "date": "2026-04-23",
+    "version": "0.9.2b32",
+    "text": "Restore OIL_GRAPH page and update firmware artifacts"
+  },
+  {
+    "date": "2026-04-22",
+    "version": "0.9.2b27",
+    "text": "Add SD card OTA bin to flash-tool site"
+  },
+  {
+    "date": "2026-04-22",
+    "version": "0.9.2b27",
+    "text": "Update actions/checkout to v4.2.2 for Node.js 24 compatibility"
+  },
+  {
+    "date": "2026-04-21",
+    "version": "0.9.2b27",
+    "text": "OIL_GRAPH: グレー履歴点を常時生成に変更"
+  },
+  {
+    "date": "2026-04-20",
+    "version": "0.9.2b25",
+    "text": "Fix GEAR timeout blink timing and TEMP2 portrait Oil.P blinking"
+  },
+  {
+    "date": "2026-04-20",
+    "version": "0.9.2b12",
+    "text": "Adjust OIL_GRAPH behavior and kPa label layout"
+  },
+  {
+    "date": "2026-04-20",
+    "version": "0.9.1b195",
+    "text": "Fix setup flow and refine OIL_GRAPH behavior"
+  },
+  {
+    "date": "2026-04-19",
+    "version": "0.9.1b172",
+    "text": "Refine portrait OIL_GRAPH oil pressure overlay layout"
+  },
+  {
+    "date": "2026-04-19",
+    "version": "0.9.1b154",
+    "text": "Tune OIL_GRAPH landscape graph layout"
+  },
+  {
+    "date": "2026-04-19",
+    "version": "0.9.1b138",
+    "text": "Adjust OIL_GRAPH display layouts"
+  },
+  {
+    "date": "2026-04-17",
+    "version": "0.9.1b63",
+    "text": "v0.9.1b63: BtnB short press toggles peak display; peak color changed to dark blue"
+  },
+  {
+    "date": "2026-04-16",
+    "version": "0.9.1b51",
+    "text": "Restore CPU clock for stable audio playback"
+  },
+  {
+    "date": "2026-04-16",
+    "version": "0.9.1b38",
+    "text": "Tune power settings and update firmware artifacts"
+  },
+  {
+    "date": "2026-04-15",
+    "version": "0.9.1b28",
+    "text": "Fix startup fade artifacts and add boot data grace period"
+  },
+  {
+    "date": "2026-04-14",
+    "version": "0.9.1b10",
+    "text": "Add SD-card OTA update flow and Config menu"
+  },
+  {
+    "date": "2026-04-12",
+    "version": "0.9.0b194",
+    "text": "Adjust gear font width and RPM layout; update firmware artifacts"
+  },
+  {
+    "date": "2026-04-12",
+    "version": "0.9.0b153",
+    "text": "Fix TPMS portrait decimal layout and kPa clipping"
+  },
+  {
+    "date": "2026-04-12",
+    "version": "0.9.0b151",
+    "text": "Adjust portrait gear/rpm layout and refresh firmware build artifacts"
+  },
+  {
+    "date": "2026-04-11",
+    "version": "0.9.0b136",
+    "text": "Fix gear portrait threshold UI and slide behavior"
+  },
+  {
+    "date": "2026-04-08",
+    "version": "0.9.0b128",
+    "text": "Expand Monitor button tap area for portrait screens"
+  },
+  {
+    "date": "2026-04-07",
+    "version": "0.9.0b117",
+    "text": "Adjust 90/270 display layouts and reception source formatting"
+  },
+  {
+    "date": "2026-04-07",
+    "version": "0.9.0b71",
+    "text": "portrait: reduce label scale to 1, lower Oil.P row 1mm"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.0b9",
+    "text": "Update published firmware package"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.0b6",
+    "text": "Add release notes section to flasher page"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.0b5",
+    "text": "Refine version format and default volume presets"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.28",
+    "text": "Remove NVS clear on update; default volumes temp=28 gear=0"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.27",
+    "text": "Reset settings to defaults on first boot after new firmware flash"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.22",
+    "text": "Fix merged binary: use keep for flash_mode/freq/size to prevent boot loop"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.17",
+    "text": "Switch CI from Pages deploy to public repo sync"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "0.9.17",
+    "text": "Add ESP Web Tools flash-tool and GitHub Pages deployment"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "-",
+    "text": "Add auto-increment version display and build numbering"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "-",
+    "text": "Refine gear page layout: position and size adjustments"
+  },
+  {
+    "date": "2026-03-29",
+    "version": "-",
+    "text": "Enable TPMS warning and gear audio"
+  },
+  {
+    "date": "2026-03-28",
+    "version": "-",
+    "text": "feat: add 200kPa tick marks above oil pressure bar"
+  },
+  {
+    "date": "2026-03-28",
+    "version": "-",
+    "text": "feat: enlarge gear bar top labels to match oil bar scale"
+  },
+  {
+    "date": "2026-03-28",
+    "version": "-",
+    "text": "feat: set default volume to temp=1, gear=0 on settings reset"
+  },
+  {
+    "date": "2026-03-28",
+    "version": "-",
+    "text": "fix: beep warning restart by removing warn100 continuous beep path"
+  },
+  {
+    "date": "2026-03-28",
+    "version": "-",
+    "text": "warn100+beep: match demo100 cadence (207ms tone, 150ms retrigger)"
+  },
+  {
+    "date": "2026-03-27",
+    "version": "-",
+    "text": "Implement status-bar sound banner and red-zone shift audio loop"
+  },
+  {
+    "date": "2026-03-26",
+    "version": "-",
+    "text": "Improve BLE scan UI and show selected device in key screen"
+  },
+  {
+    "date": "2026-03-26",
+    "version": "-",
+    "text": "Align BLE XOR decode with sender spec"
+  },
+  {
+    "date": "2026-03-25",
+    "version": "-",
+    "text": "Refine CAN monitor behavior and CSV logging"
+  },
+  {
+    "date": "2026-03-25",
+    "version": "-",
+    "text": "Fix: start WiFi AP on boot without requiring manual setup"
+  },
+  {
+    "date": "2026-03-25",
+    "version": "-",
+    "text": "TPMSスタレ点滅をrx=0時は除外、WiFiスキャンで保存済みSSIDの幽霊表示を修正"
+  },
+  {
+    "date": "2026-03-23",
+    "version": "-",
+    "text": "CANモニタ機能: 512サンプルバッファ、時間窓切替、SDログ、双方向スワイプ対応"
+  },
+  {
+    "date": "2026-03-23",
+    "version": "-",
+    "text": "TPMS受信確認前: timeout/rx表示まわり調整"
+  },
+  {
+    "date": "2026-03-22",
+    "version": "-",
+    "text": "feat: per-field timeout blink/colors, double-beep alert, WiFi timeout parity, SD audio stability, file list x32, BtnB long-press rotation, persist rotation state"
+  },
+  {
+    "date": "2026-03-22",
+    "version": "-",
+    "text": "Add MP3 playback via ESP8266Audio; tune warning pulse intervals"
+  }
+]
