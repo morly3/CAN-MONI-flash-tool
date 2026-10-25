@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "stable": {
+    "version": "0.9.9.622",
+    "date": "2026-10-13",
+    "notes": "USB接続で更新した場合の注意書き追加",
+    "sha256": {
+      "firmware_merged.bin": "54ab0c956721b63a9418b347e8c5bdb87cedb571ffc4f3d3903ad568340f6f56",
+      "firmware_ota.bin": "80339468ebc522cda567cf916bd94d047cd5ab5d5c2ff41e6a9e6b0d912e1c18"
+    },
+    "manifest": "channels/stable/69228a8d579c92309f7dbe958b71d40d13d90ccfa2610f2fe8d8ca30585bb3ee/manifest.json",
+    "merged": "channels/stable/69228a8d579c92309f7dbe958b71d40d13d90ccfa2610f2fe8d8ca30585bb3ee/firmware_merged.bin",
+    "ota": "channels/stable/69228a8d579c92309f7dbe958b71d40d13d90ccfa2610f2fe8d8ca30585bb3ee/firmware_ota.bin"
+  },
+  "beta": {
+    "version": "1.0.0.20",
+    "date": "2026-10-25T16:52:17+09:00",
+    "notes": "内部を大幅に変更したため長期テスト中のベータ版です。\n変更内容: RaceChronoへの転送レートの自動調整を追加しました。画面処理の負荷に転送レートが影響を受けないよう内部処理を最適化しました。\n確認事項: RaceChronoへの転送が不安定、または期待通りに動作しない場合はConnct Settings->BLE RaceChrono->FASTをNORMALに変更してください。その後も問題が続く場合は安定版へ戻してください。",
+    "sha256": {
+      "firmware_merged.bin": "690c358b77b9d7527e303b8d8bb3f36586801449a8363c2ce70dbfa245622fd3",
+      "firmware_ota.bin": "564f4b0ae58087808e3acc734e4b30850938b21a13804c89e1e4cf70d90bbf2e"
+    },
+    "manifest": "channels/beta/6c20b7011ff7da5e0183cdda0dcf2ad8f6b6fa4814313bcbfbdec467f9787c74/manifest.json",
+    "merged": "channels/beta/6c20b7011ff7da5e0183cdda0dcf2ad8f6b6fa4814313bcbfbdec467f9787c74/firmware_merged.bin",
+    "ota": "channels/beta/6c20b7011ff7da5e0183cdda0dcf2ad8f6b6fa4814313bcbfbdec467f9787c74/firmware_ota.bin"
+  }
+}

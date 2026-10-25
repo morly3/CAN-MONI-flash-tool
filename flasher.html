@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CAN monitor Firmware Flasher</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #1e1e2e;
+      color: #cdd6f4;
+    }
+    .page {
+      width: min(780px, 92vw);
+      padding: 24px 0 40px;
+    }
+    h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+    p  { color: #a6adc8; margin-bottom: 1.1rem; }
+    .meta {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+    }
+    .card {
+      border: 1px solid #334155;
+      border-radius: 10px;
+      background: #111827;
+      padding: 14px 16px;
+      margin-top: 1rem;
+    }
+    .card h2 {
+      margin: 0 0 10px 0;
+      font-size: 1.05rem;
+      color: #e2e8f0;
+    }
+    .history {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .history li + li {
+      margin-top: 0.4rem;
+    }
+    .history-links {
+      margin-left: 0.45rem;
+      white-space: nowrap;
+    }
+    .history-links a {
+      color: #93c5fd;
+      text-decoration: underline;
+      margin-left: 0.35rem;
+      font-size: 0.9rem;
+    }
+    .date {
+      color: #94a3b8;
+      margin-right: 0.35rem;
+    }
+    .ver {
+      color: #7dd3fc;
+      margin-right: 0.45rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+    esp-web-install-button::part(button) {
+      background: #89b4fa;
+      color: #1e1e2e;
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .connect-btn {
+      background: #89b4fa;
+      color: #1e1e2e;
+      font-size: 1rem;
+      padding: 0.6rem 1.4rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .release-notes, .history-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+    .release-notes { line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .download-btn {
+      display: inline-block; background: #a6e3a1; color: #1e1e2e;
+      padding: 0.6rem 1rem; border-radius: 6px; text-decoration: none;
+    }
+    .beta-label { color: #f9e2af; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="index.html" style="display:inline-block;margin-bottom:0.8rem;color:#89b4fa;font-size:0.9rem;text-decoration:none;">← ガイドに戻る</a>
+    <h1>CAN monitor Firmware Flasher</h1>
+    <section class="card" aria-labelledby="flash-title">
+      <h2 id="flash-title">ファームウェアの更新方法</h2>
+      <p style="color:#a6adc8;margin:0 0 0.8rem;">PC版 Chrome / Edge でこのページを開いてください。USB 接続後にボタンを押すだけで書き込みは完了します。<br>
+        ※USB接続でアップデートした場合は設定がデフォルトに戻りますので再設定をお願いします。</p>
+      <p style="color:#a6adc8;margin:0 0 0.8rem;">
+        SD カードに <code style="background:#1e1e2e;padding:2px 5px;border-radius:4px;">firmware_ota.bin</code>
+        としてコピーし、CAN monitor の設定メニューから「Firmware Update」を実行してください。SDからのOTAでは保存済み設定を保持します。
+      </p>
+    </section>
+
+    <p id="release-status" role="status">配布情報を読み込み中...</p>
+    <div id="release-list"></div>
+
+    <section class="card" aria-labelledby="release-notes-title">
+      <h2 id="release-notes-title">正式版の更新履歴</h2>
+      <ul class="history" id="history-list">
+        <li>履歴を読み込み中...</li>
+      </ul>
+    </section>
+  </main>
+
+  <script type="module" src="releases.js?v=formal-20261025"></script>
+</body>
+</html>
