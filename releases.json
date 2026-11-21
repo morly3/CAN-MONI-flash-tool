@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "stable": {
+    "version": "1.0.0.65",
+    "date": "2026-11-22T01:25:14+09:00",
+    "notes": "機能追加はありません。パフォーマンス改善が中心です。\n1) SDカードの認識\n   起動後にSDカードを挿入した場合も、挿入を検知して認識できるようにしました。\n\n2) 油圧の数値・グラフ表示\n   RaceChronoへの転送中も、油圧数値＆グラフの更新頻度が下がらないようにしました。\n   SDカードが挿入されていない場合に、油圧の数値とグラフの更新が一瞬滞る現象を修正しました。\n\n3) Gグラフ画面の軌跡表示\n   RaceChronoへの転送を開始・終了しても、軌跡表示の設定が維持されるようにしました。",
+    "sha256": {
+      "firmware_merged.bin": "eaf81e5a9c0ceb6eae23d301f9596308bf71d14835274c698473249d09cb693e",
+      "firmware_ota.bin": "7c92feb2180e1296b2017f0ba21fd2c7cd9b14f7eed898fe32a5908514feca6f"
+    },
+    "manifest": "channels/stable/86f1f08420abb7b0cee0479ab0f44bac275535c425f1e902afd9ec675397bcba/manifest.json",
+    "merged": "channels/stable/86f1f08420abb7b0cee0479ab0f44bac275535c425f1e902afd9ec675397bcba/firmware_merged.bin",
+    "ota": "channels/stable/86f1f08420abb7b0cee0479ab0f44bac275535c425f1e902afd9ec675397bcba/firmware_ota.bin"
+  },
+  "beta": null
+}
